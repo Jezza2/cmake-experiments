@@ -22,8 +22,8 @@ set_target_properties(hello PROPERTIES
 )
 
 # Add the shared_code::say_something object library and link it
-include("../../shared_code/say_something/build/say_something.cmake")
+add_subdirectory("../../shared_code/say_something" "shared_code/say_something")
 
 target_link_libraries(hello PRIVATE
-        shared_code::say_something
+        say_something
 )

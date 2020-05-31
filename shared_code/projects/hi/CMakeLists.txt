@@ -22,8 +22,7 @@ set_target_properties(hi PROPERTIES
 )
 
 
-include("../../shared_code/say_something/build/say_something.cmake")
-
+add_subdirectory("../../shared_code/say_something" "shared_code/say_something")
 target_link_libraries(hi PRIVATE
-        shared_code::say_something
+        say_something
 )

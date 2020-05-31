@@ -1,10 +1,6 @@
 
 cmake_minimum_required(VERSION 2.17)
 
-project(shared_code
-        LANGUAGES CXX
-)
-
 add_library(say_something OBJECT
         say_something.cpp
 )
@@ -17,9 +13,4 @@ target_include_directories(say_something INTERFACE
 target_compile_options(say_something PRIVATE
         "-Wall"
         "-O3"
-)
-
-export(TARGETS say_something
-        NAMESPACE shared_code::
-        FILE say_something.cmake
 )
