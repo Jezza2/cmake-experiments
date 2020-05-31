@@ -20,3 +20,10 @@ target_compile_options(hi PRIVATE
 set_target_properties(hi PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin/$<CONFIG>"
 )
+
+
+include("../../shared_code/say_something/build/say_something.cmake")
+
+target_link_libraries(hi PRIVATE
+        shared_code::say_something
+)

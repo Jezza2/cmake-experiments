@@ -20,3 +20,10 @@ target_compile_options(hello PRIVATE
 set_target_properties(hello PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin/$<CONFIG>"
 )
+
+# Add the shared_code::say_something object library and link it
+include("../../shared_code/say_something/build/say_something.cmake")
+
+target_link_libraries(hello PRIVATE
+        shared_code::say_something
+)

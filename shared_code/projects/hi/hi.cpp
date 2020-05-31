@@ -1,4 +1,4 @@
-#include "say_something/say_something.h"
+#include "say_something.h"
 
 int main()
 {
